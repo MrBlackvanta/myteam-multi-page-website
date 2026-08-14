@@ -7,16 +7,30 @@ import { usePathname } from "next/navigation";
 
 type NavLinksVariant = "header" | "footer" | "menu";
 
-const listStyles: Record<NavLinksVariant, string> = {
-  header: "ml-12 hidden gap-10 md:flex xl:ml-20",
-  footer: "flex gap-6 xl:gap-10",
-  menu: "flex flex-col gap-6",
+type Variant = {
+  landmark: string;
+  nav?: string;
+  list: string;
+  link: string;
 };
 
-const linkStyles: Record<NavLinksVariant, string> = {
-  header: "v-link text-lead",
-  footer: "v-link text-body xl:text-lead",
-  menu: "v-link-menu text-lead",
+const variants: Record<NavLinksVariant, Variant> = {
+  header: {
+    landmark: "Main",
+    nav: "ml-12 hidden md:block xl:ml-20",
+    list: "flex gap-10",
+    link: "v-link text-lead",
+  },
+  footer: {
+    landmark: "Footer",
+    list: "flex gap-6 xl:gap-10",
+    link: "v-link text-body xl:text-lead",
+  },
+  menu: {
+    landmark: "Main",
+    list: "flex flex-col gap-6",
+    link: "v-link-menu text-lead",
+  },
 };
 
 type NavLinksProps = {
@@ -26,21 +40,24 @@ type NavLinksProps = {
 
 export default function NavLinks({ variant, onNavigate }: NavLinksProps) {
   const pathname = usePathname();
+  const { landmark, nav, list, link } = variants[variant];
 
   return (
-    <ul className={listStyles[variant]}>
-      {navLinks.map(({ label, href }) => (
-        <li key={href}>
-          <Link
-            href={href}
-            onClick={onNavigate}
-            aria-current={pathname === href ? "page" : undefined}
-            className={cn("inline-block", linkStyles[variant])}
-          >
-            {label}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <nav aria-label={landmark} className={nav}>
+      <ul className={list}>
+        {navLinks.map(({ label, href }) => (
+          <li key={href}>
+            <Link
+              href={href}
+              onClick={onNavigate}
+              aria-current={pathname === href ? "page" : undefined}
+              className={cn("inline-block", link)}
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
