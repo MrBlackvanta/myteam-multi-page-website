@@ -2,6 +2,7 @@ export { default as ChartIcon } from "./ChartIcon";
 export { default as CloseIcon } from "./CloseIcon";
 export { default as CogIcon } from "./CogIcon";
 export { default as FacebookIcon } from "./FacebookIcon";
+export { default as LinkedInIcon } from "./LinkedInIcon";
 export { default as Logo } from "./Logo";
 export { default as MenuIcon } from "./MenuIcon";
 export { default as PersonIcon } from "./PersonIcon";

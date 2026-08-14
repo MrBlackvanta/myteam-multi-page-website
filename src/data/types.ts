@@ -16,6 +16,13 @@ export type Feature = {
   icon: ComponentType<SVGProps<SVGSVGElement>>;
 };
 
+export type Director = {
+  name: string;
+  role: string;
+  quote: string;
+  avatar: StaticImageData;
+};
+
 export type Testimonial = {
   quote: string;
   name: string;
