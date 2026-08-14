@@ -1,5 +1,5 @@
 import CtaBand from "@/components/cta-band";
-import { Directors, Hero } from "@/views/about";
+import { Clients, Directors, Hero } from "@/views/about";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,6 +13,7 @@ export default function About() {
     <>
       <Hero />
       <Directors />
+      <Clients />
       <CtaBand />
     </>
   );

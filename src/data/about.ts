@@ -4,7 +4,12 @@ import avatarCruz from "@/assets/images/avatar-cruz.webp";
 import avatarDrake from "@/assets/images/avatar-drake.webp";
 import avatarGriffin from "@/assets/images/avatar-griffin.webp";
 import avatarNikita from "@/assets/images/avatar-nikita.webp";
-import type { Director } from "./types";
+import logoGadgetsNow from "@/assets/images/logo-gadgets-now.webp";
+import logoJakartaPost from "@/assets/images/logo-jakarta-post.webp";
+import logoTechRadar from "@/assets/images/logo-tech-radar.webp";
+import logoTheGuardian from "@/assets/images/logo-the-guardian.webp";
+import logoTheVerge from "@/assets/images/logo-the-verge.webp";
+import type { Client, Director } from "./types";
 
 export const directors: Director[] = [
   {
@@ -48,5 +53,33 @@ export const directors: Director[] = [
     quote:
       "“Empowered teams create truly amazing products. Set the north star and let them follow it.”",
     avatar: avatarAden,
+  },
+];
+
+export const clients: Client[] = [
+  {
+    name: "The Verge",
+    logo: logoTheVerge,
+    width: "w-36.75 md:w-25.75 xl:w-41.25",
+  },
+  {
+    name: "Jakarta Post",
+    logo: logoJakartaPost,
+    width: "w-40.5 md:w-28.5 xl:w-46",
+  },
+  {
+    name: "The Guardian",
+    logo: logoTheGuardian,
+    width: "w-39.75 md:w-28 xl:w-45",
+  },
+  {
+    name: "Tech Radar",
+    logo: logoTechRadar,
+    width: "w-36.75 md:w-25.75 xl:w-41.25",
+  },
+  {
+    name: "Gadgets Now",
+    logo: logoGadgetsNow,
+    width: "w-21.75 md:w-15.25 xl:w-24.5",
   },
 ];

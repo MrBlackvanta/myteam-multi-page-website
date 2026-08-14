@@ -16,6 +16,12 @@ export type Feature = {
   icon: ComponentType<SVGProps<SVGSVGElement>>;
 };
 
+export type Client = {
+  name: string;
+  logo: StaticImageData;
+  width: string;
+};
+
 export type Director = {
   name: string;
   role: string;
