@@ -59,6 +59,10 @@
   @apply mx-auto w-full max-w-277.5 px-6 md:px-10 xl:px-0;
 }
 
+@utility v-decor {
+  @apply pointer-events-none absolute inset-y-0 left-1/2 w-full max-w-277.5 -translate-x-1/2;
+}
+
 @utility v-tap {
   position: relative;
   &::after {
