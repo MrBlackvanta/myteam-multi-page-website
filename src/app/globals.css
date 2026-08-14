@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-midnight-green: #014e56;
+  --color-light-coral: #f67e7e;
+  --color-rapture-blue: #79c8c7;
+  --color-police-blue: #2c6269;
+  --color-deep-jungle-green: #004047;
+  --color-sacramento-state-green: #012f34;
+  --color-dark-green: #002529;
+
+  --color-avatar-ring: #c4fffe;
+
+  --color-field-hint: #9ab9bb;
+  --color-coral-ink: #f89a9a;
+  --color-coral-ink-menu: #fbc4c4;
+
+  --text-h1-lg: 6.25rem;
+  --text-h1-lg--line-height: 1;
+  --text-h1-md: 4rem;
+  --text-h1-md--line-height: 3.5rem;
+  --text-h1-sm: 2.5rem;
+  --text-h1-sm--line-height: 1;
+  --text-h2: 3rem;
+  --text-h2--line-height: 1;
+  --text-h2-sm: 2rem;
+  --text-h2-sm--line-height: 1;
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.75rem;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.5625rem;
+  --text-body-loose: 0.9375rem;
+  --text-body-loose--line-height: 1.75rem;
+  --text-meta: 0.8125rem;
+  --text-meta--line-height: 1.125rem;
+  --text-error: 0.75rem;
+  --text-error--line-height: 1.26;
+}
+
+@theme inline {
+  --font-sans: var(--font-livvic);
+  --font-italic: var(--font-livvic-italic);
+}
+
+@layer base {
+  body {
+    @apply bg-midnight-green font-sans font-semibold text-white;
+  }
+}
