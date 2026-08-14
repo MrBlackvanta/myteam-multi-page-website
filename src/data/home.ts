@@ -1,5 +1,8 @@
+import avatarAiysha from "@/assets/images/avatar-aiysha.webp";
+import avatarArthur from "@/assets/images/avatar-arthur.webp";
+import avatarKady from "@/assets/images/avatar-kady.webp";
 import { ChartIcon, CogIcon, PersonIcon } from "@/components/icons";
-import type { Feature } from "./types";
+import type { Feature, Testimonial } from "./types";
 
 export const features: Feature[] = [
   {
@@ -16,5 +19,29 @@ export const features: Feature[] = [
     title: "Enhanced Productivity",
     body: "Our customized platform with in-built analytics helps you manage your distributed teams.",
     icon: ChartIcon,
+  },
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "“The team perfectly fit the specialized skill set required. They focused on the most essential features helping us launch the platform eight months faster than planned.”",
+    name: "Kady Baker",
+    role: "Product Manager at Bookmark",
+    avatar: avatarKady,
+  },
+  {
+    quote:
+      "“We needed to automate our entire onboarding process. The team came in and built out the whole journey. Since going live, user retention has gone through the roof!”",
+    name: "Aiysha Reese",
+    role: "Founder of Manage",
+    avatar: avatarAiysha,
+  },
+  {
+    quote:
+      "“Amazing. Our team helped us build an app that delivered a new experience for hiring a physio. The launch was an instant success with 100k downloads in the first month.”",
+    name: "Arthur Clarke",
+    role: "Co-founder of MyPhysio",
+    avatar: avatarArthur,
   },
 ];

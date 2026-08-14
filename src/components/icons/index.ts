@@ -7,4 +7,5 @@ export { default as MenuIcon } from "./MenuIcon";
 export { default as PersonIcon } from "./PersonIcon";
 export { default as PinterestIcon } from "./PinterestIcon";
 export { default as PlusIcon } from "./PlusIcon";
+export { default as QuotesIcon } from "./QuotesIcon";
 export { default as TwitterIcon } from "./TwitterIcon";

@@ -1,18 +1,17 @@
 import CtaBand from "@/components/cta-band";
+import { Hero } from "@/views/about";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
+  description:
+    "myteam builds dynamic teams from a global network of passionate professionals. Meet the directors behind the company.",
 };
 
 export default function About() {
   return (
     <>
-      <section className="bg-midnight-green pt-20 pb-28">
-        <div className="v-container">
-          <h1 className="text-h1-sm md:text-h1-md font-bold">About</h1>
-        </div>
-      </section>
+      <Hero />
       <CtaBand />
     </>
   );

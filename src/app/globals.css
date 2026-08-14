@@ -10,6 +10,7 @@
   --color-dark-green: #002529;
 
   --color-avatar-ring: #c4fffe;
+  --color-coral-highlight: #ff7f7f;
 
   --color-field-hint: #9ab9bb;
   --color-coral-ink: #f89a9a;
@@ -39,7 +40,6 @@
 
 @theme inline {
   --font-sans: var(--font-livvic);
-  --font-italic: var(--font-livvic-italic);
 }
 
 @layer base {

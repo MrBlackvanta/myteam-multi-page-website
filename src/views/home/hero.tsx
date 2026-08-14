@@ -11,7 +11,7 @@ export default function Hero() {
           <h1 className="text-center text-h1-sm font-bold md:text-h1-md xl:text-left xl:text-h1-lg">
             Find the
             <br />
-            best talent
+            best <span className="text-coral-highlight">talent</span>
           </h1>
           <p className="mx-auto mt-4.5 max-w-114.25 text-center text-body-loose md:mt-6 xl:mx-0 xl:mt-20.75 xl:max-w-none xl:text-left xl:text-lead">
             Finding the right people and building high performing teams can be
