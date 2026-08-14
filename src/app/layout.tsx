@@ -1,3 +1,4 @@
+import { SiteFooter, SiteHeader } from "@/components/layout";
 import type { Metadata, Viewport } from "next";
 import { Livvic } from "next/font/google";
 import "./globals.css";
@@ -61,7 +62,11 @@ export default function RootLayout({
       lang="en"
       className={`${livvic.variable} ${livvicItalic.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body className="flex min-h-dvh flex-col">
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
+      </body>
     </html>
   );
 }

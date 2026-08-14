@@ -5,8 +5,7 @@ export default function Logo(props: React.SVGProps<SVGSVGElement>) {
       width="160"
       height="40"
       viewBox="0 0 160 40"
-      role="img"
-      aria-label="myteam"
+      aria-hidden="true"
       {...props}
     >
       <path

@@ -46,4 +46,56 @@
   body {
     @apply bg-midnight-green font-sans font-semibold text-white;
   }
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@utility v-container {
+  @apply mx-auto w-full max-w-277.5 px-6 md:px-[6.09375rem] xl:px-0;
+}
+
+@utility v-container-chrome {
+  @apply mx-auto w-full max-w-277.5 px-6 md:px-10 xl:px-0;
+}
+
+@utility v-tap {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -0.75rem;
+  }
+}
+
+@utility v-focus {
+  @apply focus-visible:outline-rapture-blue focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+
+@utility v-focus-on-coral {
+  @apply focus-visible:outline-sacramento-state-green focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+
+@utility v-btn {
+  @apply v-focus text-lead inline-flex h-12 items-center justify-center rounded-full border-2 px-8 font-semibold motion-safe:transition-colors;
+}
+
+@utility v-btn-on-dark {
+  @apply hover:text-dark-green border-white text-white hover:bg-white;
+}
+
+@utility v-btn-on-coral {
+  @apply v-focus-on-coral border-sacramento-state-green text-sacramento-state-green hover:bg-sacramento-state-green hover:text-white;
+}
+
+@utility v-btn-solid {
+  @apply text-deep-jungle-green hover:border-rapture-blue hover:bg-rapture-blue hover:text-dark-green border-white bg-white;
+}
+
+@utility v-link {
+  @apply v-focus hover:text-coral-ink motion-safe:transition-colors;
+}
+
+@utility v-link-menu {
+  @apply v-focus hover:text-coral-ink-menu motion-safe:transition-colors;
 }
