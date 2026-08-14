@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { type FormEvent, useId, useState } from "react";
+import { type SubmitEvent, useId, useState } from "react";
 
 const REQUIRED_MESSAGE = "This field is required";
 const EMAIL_MESSAGE = "Please use a valid email address";
@@ -67,7 +67,7 @@ export default function ContactForm({ className }: { className?: string }) {
   const fieldId = (name: string) => `${id}-${name}`;
   const errorId = (name: string) => `${id}-${name}-error`;
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const found = collectErrors(form);

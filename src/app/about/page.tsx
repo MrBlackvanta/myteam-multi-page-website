@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "myteam builds dynamic teams from a global network of passionate professionals. Meet the directors behind the company.",
+  alternates: { canonical: "/about" },
 };
 
 export default function About() {

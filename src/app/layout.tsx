@@ -1,4 +1,5 @@
 import { SiteFooter, SiteHeader } from "@/components/layout";
+import { siteUrl } from "@/data";
 import type { Metadata, Viewport } from "next";
 import { Livvic } from "next/font/google";
 import "./globals.css";
@@ -22,7 +23,6 @@ const livvicItalic = Livvic({
 const siteName = "myteam";
 const description =
   "myteam helps companies build dynamic, high-performing teams from a global network of experienced professionals.";
-const siteUrl = "https://vanta-myteam-multi-page-website.netlify.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     template: "%s | myteam",
   },
   description,
+  alternates: { canonical: "/" },
   openGraph: {
     title: "myteam — Find the best talent",
     description,
