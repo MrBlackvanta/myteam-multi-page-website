@@ -81,7 +81,7 @@
 }
 
 @utility v-btn {
-  @apply v-focus text-lead inline-flex h-12 items-center justify-center rounded-full border-2 px-8 font-semibold motion-safe:transition-colors;
+  @apply v-focus text-lead inline-flex h-12 items-center justify-center rounded-full border-2 px-7.5 font-semibold motion-safe:transition-colors;
 }
 
 @utility v-btn-on-dark {
