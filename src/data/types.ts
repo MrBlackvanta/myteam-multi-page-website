@@ -8,3 +8,9 @@ export type NavLink = {
 export type SocialLink = NavLink & {
   icon: ComponentType<SVGProps<SVGSVGElement>>;
 };
+
+export type Feature = {
+  title: string;
+  body: string;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
+};
