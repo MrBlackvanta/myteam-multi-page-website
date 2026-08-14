@@ -42,7 +42,7 @@ export default function Testimonials() {
                     alt=""
                     width={62}
                     height={62}
-                    className="mx-auto mt-4 ring-2 ring-avatar-ring xl:mt-8"
+                    className="mx-auto mt-4 rounded-full ring-2 ring-avatar-ring xl:mt-8"
                   />
                 </figcaption>
               </figure>
