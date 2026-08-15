@@ -1,5 +1,6 @@
 import { SiteFooter, SiteHeader } from "@/components/layout";
 import { siteUrl } from "@/data";
+import { pageMetadata } from "@/lib/metadata";
 import type { Metadata, Viewport } from "next";
 import { Livvic } from "next/font/google";
 import "./globals.css";
@@ -20,31 +21,19 @@ const livvicItalic = Livvic({
   preload: false,
 });
 
-const siteName = "myteam";
+const homeTitle = "myteam — Find the best talent";
 const description =
   "myteam helps companies build dynamic, high-performing teams from a global network of experienced professionals.";
 
 export const metadata: Metadata = {
+  ...pageMetadata({
+    title: homeTitle,
+    shareTitle: homeTitle,
+    description,
+    path: "/",
+  }),
   metadataBase: new URL(siteUrl),
-  title: {
-    default: "myteam — Find the best talent",
-    template: "%s | myteam",
-  },
-  description,
-  alternates: { canonical: "/" },
-  openGraph: {
-    title: "myteam — Find the best talent",
-    description,
-    url: "/",
-    siteName,
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "myteam — Find the best talent",
-    description,
-  },
+  title: { default: homeTitle, template: "%s | myteam" },
 };
 
 export const viewport: Viewport = {

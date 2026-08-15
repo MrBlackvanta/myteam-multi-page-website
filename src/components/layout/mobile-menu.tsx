@@ -8,37 +8,45 @@ import NavLinks from "./nav-links";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
-  const panelRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!open) return;
-    closeRef.current?.focus();
+
+    const desktop = window.matchMedia("(min-width: 48rem)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setOpen(false);
+    };
+    desktop.addEventListener("change", closeOnDesktop);
+
+    const behind = document.querySelectorAll(
+      "[data-behind-menu], main, footer",
+    );
+    behind.forEach((element) => element.setAttribute("inert", ""));
+
+    const toggle = toggleRef.current;
     const { style } = document.body;
-    const previous = style.overflow;
+    const previousOverflow = style.overflow;
     style.overflow = "hidden";
+    closeRef.current?.focus();
+
     return () => {
-      style.overflow = previous;
+      desktop.removeEventListener("change", closeOnDesktop);
+      behind.forEach((element) => element.removeAttribute("inert"));
+      style.overflow = previousOverflow;
+      toggle?.focus();
     };
   }, [open]);
 
-  const close = () => {
-    setOpen(false);
-    toggleRef.current?.focus();
+  const close = () => setOpen(false);
+
+  const closeOnEscape = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Escape") close();
   };
 
-  const trapFocus = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === "Escape") {
-      close();
-      return;
-    }
-    if (event.key !== "Tab" || !panelRef.current) return;
-    const stops = panelRef.current.querySelectorAll<HTMLElement>("a, button");
-    const edge = event.shiftKey ? stops[0] : stops[stops.length - 1];
-    if (document.activeElement !== edge) return;
-    event.preventDefault();
-    (event.shiftKey ? stops[stops.length - 1] : stops[0]).focus();
+  const closeOnBackdrop = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) close();
   };
 
   return (
@@ -49,6 +57,7 @@ export default function MobileMenu() {
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label="Open menu"
+        inert={open}
         onClick={() => setOpen(true)}
         className="v-tap flex v-focus"
       >
@@ -57,11 +66,11 @@ export default function MobileMenu() {
 
       <div
         id="mobile-menu"
-        ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-label="Menu"
-        onKeyDown={trapFocus}
+        onKeyDown={closeOnEscape}
+        onClick={closeOnBackdrop}
         className={cn(
           "invisible fixed inset-0 z-50 flex bg-black/50 opacity-0 motion-safe:transition-[opacity,visibility] motion-safe:duration-300",
           { "visible opacity-100": open },
@@ -72,7 +81,7 @@ export default function MobileMenu() {
           type="button"
           aria-label="Close menu"
           onClick={close}
-          className="absolute top-11 right-3 z-10 p-3 v-focus"
+          className="absolute top-11 right-3 z-10 flex size-11 items-center justify-center v-focus"
         >
           <CloseIcon />
         </button>

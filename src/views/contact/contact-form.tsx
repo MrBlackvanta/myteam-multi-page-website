@@ -8,7 +8,13 @@ const EMAIL_MESSAGE = "Please use a valid email address";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const textFields = [
-  { name: "name", label: "Name", type: "text", autoComplete: "name", required: true },
+  {
+    name: "name",
+    label: "Name",
+    type: "text",
+    autoComplete: "name",
+    required: true,
+  },
   {
     name: "email",
     label: "Email Address",
@@ -52,7 +58,7 @@ function collectErrors(form: HTMLFormElement): Errors {
 
 function fieldClass(invalid: boolean) {
   return cn(
-    "v-focus text-body block w-full border-b bg-transparent pt-0 pr-0 pb-4 pl-3.5 text-white",
+    "v-field v-focus block w-full border-b bg-transparent pt-0 pr-0 pb-4 pl-3.5 text-white",
     invalid
       ? "border-light-coral placeholder:text-coral-ink"
       : "border-white placeholder:text-field-hint focus:border-rapture-blue",
@@ -111,7 +117,7 @@ export default function ContactForm({ className }: { className?: string }) {
           {errors[name] && (
             <p
               id={errorId(name)}
-              className="text-error text-coral-ink mt-2 pl-3.5 font-bold italic"
+              className="mt-2 pl-3.5 text-error font-bold text-coral-ink italic"
             >
               {errors[name]}
             </p>
@@ -131,12 +137,15 @@ export default function ContactForm({ className }: { className?: string }) {
           required
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? errorId("message") : undefined}
-          className={cn(fieldClass(Boolean(errors.message)), "min-h-21 resize-y")}
+          className={cn(
+            fieldClass(Boolean(errors.message)),
+            "min-h-21 resize-y",
+          )}
         />
         {errors.message && (
           <p
             id={errorId("message")}
-            className="text-error text-coral-ink mt-2 pl-3.5 font-bold italic"
+            className="mt-2 pl-3.5 text-error font-bold text-coral-ink italic"
           >
             {errors.message}
           </p>

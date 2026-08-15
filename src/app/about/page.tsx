@@ -1,13 +1,14 @@
 import CtaBand from "@/components/cta-band";
+import { pageMetadata } from "@/lib/metadata";
 import { Clients, Directors, Hero } from "@/views/about";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About",
+  shareTitle: "About | myteam",
   description:
     "myteam builds dynamic teams from a global network of passionate professionals. Meet the directors behind the company.",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 export default function About() {
   return (
