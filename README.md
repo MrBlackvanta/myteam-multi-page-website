@@ -64,6 +64,25 @@ Left at the design's own value, deliberately:
 - **`#C4FFFE`** for the 2px ring around every avatar. Also off-palette, also drawn that
   way in the file (13.09 on the card, so contrast is not the reason it is there).
 
+**`bg-pattern-about-2-contact-1.svg` ships without its `#79C8C7` stripes and `#F67E7E`
+dots.** This is the largest deviation in the file and the only one that changes what a
+sighted user sees, so it is worth the detail.
+
+The design places this 200×200 tile at x 100–300 on both the contact hero and the
+directors band, while the text column starts at 165 on desktop and the headings centre
+over the tile on tablet. Its two light shape groups occupy the right half — exactly the
+band the headings cross. Measured on the built page, heading ink landed on `#79C8C7` at
+**1.93:1** and, worst of all, `#F67E7E` on `#F67E7E` at **1.00:1**, where the strokes
+vanish outright.
+
+Nothing recoverable was available. The tile cannot move: the container's left edge sits at
+85px at 1280 and 97.5px at 768, so no offset clears the text at every breakpoint. The
+colours cannot move either — the dots sit under a white heading on `/about` and a coral one
+on `/contact`, and satisfying both would need them darker than the section background. The
+asset has no other use, so a second "quiet" variant would leave the coloured one unused.
+Dropping the two groups leaves the `#012F34` ring and `#2C6269` square, which take the
+worst heading pixel to **6.87:1** against white and **5.63:1** against coral.
+
 #### Type and spacing
 
 - **Error messages are 12px, not the design's 10px.** Side effect: an errored field grows
@@ -71,6 +90,11 @@ Left at the design's own value, deliberately:
   further down than that frame shows.
 - **No letter-spacing is applied.** The form fields carry −0.0077em in the file, about
   0.115px at 15px — below the threshold where it renders as anything.
+- **Form fields grow from the design's 15px to 16px on coarse pointers.** iOS Safari
+  zooms the viewport whenever a focused field is under 16px, and the other escape —
+  `maximum-scale=1` on the viewport — trades that for a 1.4.4 failure. The line-height
+  stays at 25px, so the field boxes measure the same 42px and 84px either way; only the
+  glyphs differ, and only on touch.
 - **An `xl` breakpoint at 1280px was added.** The design supplies 375 / 768 / 1440 only;
   1280 is where the desktop grid stops fitting. Layouts were swept at 320 / 375 / 767 /
   768 / 1009 / 1279 / 1280 / 1440 with no horizontal overflow at any width.
@@ -85,7 +109,14 @@ Left at the design's own value, deliberately:
 - **Focus.** Nothing in the file describes a keyboard focus state, so every interactive
   element takes a 2px `#79C8C7` outline at 2px offset (`#012F34` where the backdrop is
   coral). Form fields also switch their underline to `#79C8C7` on focus, which is the one
-  hint the Active States frame does give.
+  hint the Active States frame does give — except an errored field, which keeps its coral
+  underline so the error survives being focused. The focus ring is the focus indicator;
+  the underline is a second, weaker one, and the error state outranks it.
+- **The mobile menu closes on a backdrop tap, on Escape, and on crossing to `md`.** Only
+  the close button is drawn in the file. The breakpoint case is not cosmetic: the panel
+  lives inside a `md:hidden` wrapper, so a phone rotated to landscape crosses 768px and
+  would otherwise leave the page scroll-locked and inert behind a menu it can no longer
+  show. While it is open, `header`'s contents, `main` and `footer` are marked `inert`.
 - **The directors' `+` toggle on hover** previews the other state's colour — coral becomes
   `#79C8C7` when closed, and the reverse when open.
 - **The contact form's success state.** The brief specifies error messages only and there
@@ -130,6 +161,9 @@ Left at the design's own value, deliberately:
   which misaligns the three feature rows.
 - **Nothing in the file uses a shadow, and no corner radius appears outside the pill
   buttons and the avatar circles** — checked rather than assumed.
+- **`og.png` is a 1200×630 shot of the home hero**, 37 KB, generated from the built site
+  rather than drawn. It is not in the design; the challenge has no share card. All three
+  routes point at it, each with its own title, description and URL.
 
 ## Author
 
