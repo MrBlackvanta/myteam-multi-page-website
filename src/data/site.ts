@@ -1,7 +1,7 @@
 import { FacebookIcon, PinterestIcon, TwitterIcon } from "@/components/icons";
 import type { NavLink, SocialLink } from "./types";
 
-export const siteUrl = "https://vanta-myteam-multi-page-website.netlify.app";
+export const siteUrl = "https://myteam-multi-page-website.abdelrhman-ahmed8881.workers.dev";
 
 export const routes = ["/", "/about", "/contact"];
 

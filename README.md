@@ -21,7 +21,8 @@ This is a solution to the [myteam multi-page website challenge on Frontend Mento
 ### Links
 
 - Solution URL: [GitHub](https://github.com/MrBlackvanta/myteam-multi-page-website)
-- Live Site URL: [Netlify](https://vanta-myteam-multi-page-website.netlify.app)
+- Live Site URL: [Cloudflare](https://myteam-multi-page-website.abdelrhman-ahmed8881.workers.dev)
+- Mirror: [Netlify](https://vanta-myteam-multi-page-website.netlify.app)
 
 ## My process
 
