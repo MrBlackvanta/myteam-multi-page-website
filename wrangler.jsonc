@@ -1,0 +1,5 @@
+{
+  "name": "myteam-multi-page-website",
+  "compatibility_date": "2026-08-15",
+  "assets": { "directory": "./out", "not_found_handling": "404-page" }
+}
