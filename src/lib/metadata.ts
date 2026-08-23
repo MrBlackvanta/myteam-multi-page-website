@@ -4,10 +4,10 @@ const siteName = "myteam";
 
 const images = [
   {
-    url: "/og.png",
+    url: "/opengraph-image.jpg",
     width: 1200,
     height: 630,
-    alt: "The myteam homepage, headlined “Find the best talent”.",
+    alt: "The myteam card, headlined “Find the best talent”, beside the company’s directors.",
   },
 ];
 

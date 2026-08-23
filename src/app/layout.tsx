@@ -21,7 +21,7 @@ const livvicItalic = Livvic({
   preload: false,
 });
 
-const homeTitle = "myteam — Find the best talent";
+const homeTitle = "myteam | Find the best talent";
 const description =
   "myteam helps companies build dynamic, high-performing teams from a global network of experienced professionals.";
 

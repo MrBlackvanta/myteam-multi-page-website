@@ -162,9 +162,15 @@ worst heading pixel to **6.87:1** against white and **5.63:1** against coral.
   which misaligns the three feature rows.
 - **Nothing in the file uses a shadow, and no corner radius appears outside the pill
   buttons and the avatar circles** — checked rather than assumed.
-- **`og.png` is a 1200×630 shot of the home hero**, 37 KB, generated from the built site
-  rather than drawn. It is not in the design; the challenge has no share card. All three
-  routes point at it, each with its own title, description and URL.
+- **`public/opengraph-image.jpg` is a 1200×630 share card**, composed from the site's own
+  fonts and tokens rather than drawn: the name and its headline on the midnight green, beside
+  a native-resolution shot of the directors grid (`src/assets/og-panel.webp`, captured at
+  768×1034 so its aspect already matches the card's panel and nothing is cropped). It is not
+  in the design; the challenge has no share card. All three routes point at it, each with its
+  own title, description and URL. It replaces an earlier full-page screenshot of the home
+  hero, which said nothing at thumbnail size. It lives in `public/`, not at
+  `src/app/opengraph-image.jpg`: the file convention appends a content hash as a query
+  string, and LinkedIn's Post Inspector reports "No image found" for the result.
 
 ## Author
 
