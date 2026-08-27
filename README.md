@@ -22,7 +22,6 @@ This is a solution to the [myteam multi-page website challenge on Frontend Mento
 
 - Solution URL: [GitHub](https://github.com/MrBlackvanta/myteam-multi-page-website)
 - Live Site URL: [Cloudflare](https://myteam-multi-page-website.abdelrhman-ahmed8881.workers.dev)
-- Mirror: [Netlify](https://vanta-myteam-multi-page-website.netlify.app)
 
 ## My process
 
@@ -174,6 +173,6 @@ worst heading pixel to **6.87:1** against white and **5.63:1** against coral.
 
 ## Author
 
-- UpWork - [Abdelrhman Abdelaal](https://upwork.com/freelancers/~01f0a9479696b61f49)
+- UpWork - [Abdelrhman Abdelaal](https://www.upwork.com/freelancers/mrblackvanta)
 - Frontend Mentor - [@MrBlackvanta](https://www.frontendmentor.io/profile/MrBlackvanta)
 - LinkedIn - [Abdelrhman Abdelaal](https://www.linkedin.com/in/abdelrhman-vanta/)
